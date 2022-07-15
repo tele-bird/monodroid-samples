@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="2.0" package="com.xamarin.sample.splashscreen" android:installLocation="auto">
-	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="@string/ApplicationName" android:theme="@style/MyTheme" android:icon="@mipmap/ic_launcher"></application>
+	<uses-sdk android:minSdkVersion="30" android:targetSdkVersion="31" />
+	<application android:label="@string/ApplicationName" android:theme="@style/MyTheme" android:icon="@mipmap/ic_launcher">
+		<provider android:name="androidx.startup.InitializationProvider" android:authorities="${applicationId}.androidx-startup">
+			<meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup" />
+		</provider>
+	</application>
 </manifest>
